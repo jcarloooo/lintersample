@@ -1,0 +1,15 @@
+{
+    "version": "0.1",
+    "ignoreWords": [
+      "robotframework",
+      "robocop",
+      "SARIF",
+      "stefanzweifel"
+    ],
+    "dictionaries": [
+      "robotframework",
+      "robocop",
+      "SARIF",
+      "stefanzweifel"
+    ]
+  }
