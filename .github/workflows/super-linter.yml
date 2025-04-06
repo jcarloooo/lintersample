@@ -8,7 +8,7 @@ on: # yamllint disable-line rule:truthy
 permissions: {}
 
 jobs:
-  build:
+  build: 
     name: Lint
     runs-on: ubuntu-latest
 
