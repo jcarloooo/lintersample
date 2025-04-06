@@ -65,7 +65,7 @@ jobs:
 
         # You can override MegaLinter flavor used to have faster performances
         # More info at https://megalinter.io/latest/flavors/
-        uses: oxsecurity/megalinter@v8
+        uses: oxsecurity/megalinter/flavors/python@v8.5.0
 
         id: ml
 
@@ -137,17 +137,17 @@ jobs:
             (!contains(fromJSON('["refs/heads/main", "refs/heads/master"]'), github.ref))
           }}" >> "${GITHUB_ENV}"
 
-      # Create pull request if applicable
-      # (for now works only on PR from same repository, not from forks)
-      - name: Create Pull Request with applied fixes
-        uses: peter-evans/create-pull-request@v6
-        id: cpr
-        if: env.APPLY_FIXES_IF_PR == 'true'
-        with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-          commit-message: "[MegaLinter] Apply linters automatic fixes"
-          title: "[MegaLinter] Apply linters automatic fixes"
-          labels: bot
+      # # Create pull request if applicable
+      # # (for now works only on PR from same repository, not from forks)
+      # - name: Create Pull Request with applied fixes
+      #   uses: peter-evans/create-pull-request@v6
+      #   id: cpr
+      #   if: env.APPLY_FIXES_IF_PR == 'true'
+      #   with:
+      #     token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+      #     commit-message: "[MegaLinter] Apply linters automatic fixes"
+      #     title: "[MegaLinter] Apply linters automatic fixes"
+      #     labels: bot
 
       - name: Create PR output
         if: env.APPLY_FIXES_IF_PR == 'true'
