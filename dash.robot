@@ -2,8 +2,11 @@
 Documentation    Testing
 Library     SeleniumLibrary
 
+
 *** Variables ***
 ${testvar}    sss
+${testvar}    sss
+
 
 *** Test Cases ***
 Login
